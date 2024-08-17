@@ -4,7 +4,7 @@
 --CREATE DATABASE LUBGUBAN_DB;
 
 ------------------------------- 2. Create the Tables -------------------------------
---USE LUBGUBAN_DB;
+USE LUBGUBAN_DB;
 
 create table DEPARTMENT(
 	DEPTNO char(3) primary key,

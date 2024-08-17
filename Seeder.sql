@@ -1,6 +1,6 @@
 -- this query is for seeding the database
 
---USE LUBGUBAN_DB;
+USE LUBGUBAN_DB;
 
 -- department tables seeder without manager numbers
 INSERT INTO DEPARTMENT 
