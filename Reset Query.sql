@@ -1,5 +1,5 @@
 -- this query is for resetting the database
---USE LUBGUBAN_DB;
+USE LUBGUBAN_DB;
 
 alter table DEPARTMENT
 	drop 
@@ -20,7 +20,6 @@ alter table EMP_ACT
 		constraint FK_EMPNO,
 		constraint FK_PROJNO
 
-		
 drop table EMP_ACT;
 drop table EMPLOYEE;
 drop table PROJECT;
