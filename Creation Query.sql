@@ -1,7 +1,7 @@
 --this query creates the database
 
 -- 1. Create The database
---CREATE DATABASE LUBGUBAN_DB;
+-- CREATE DATABASE LUBGUBAN_DB;
 
 ------------------------------- 2. Create the Tables -------------------------------
 USE LUBGUBAN_DB;

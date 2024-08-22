@@ -2,164 +2,88 @@
 USE LUBGUBAN_DB;
 
 ---1. problem 2---
-select 
-	emp.LASTNAME,
-	emp.BIRTHDATE,
-	emp.SALARY
-
-	from EMPLOYEE as emp
-
-	where emp.SALARY > 30000.00
-
-	order by emp.SALARY desc
-;
+SELECT		lastname, birthdate, salary
+FROM		employee
+WHERE		salary > 30000.00
+ORDER BY	salary DESC;
 
 --2. problem 2--
-select 
-	emp.LASTNAME,
-	emp.FIRSTNAME,
-	emp.WORKDEPT
-from EMPLOYEE as emp
-	order by 
-		emp.WORKDEPT desc,
-		emp.LASTNAME desc
-;
+SELECT		lastname, firstname, workdept
+FROM		employee
+ORDER BY	workdept DESC, lastname DESC;
 
 --3. problem 3--
-select distinct
-	emp.EDLEVEL
-	
-from EMPLOYEE as emp
-	order by emp.EDLEVEL desc
-;
+SELECT DISTINCT edlevel
+FROM			employee 
+ORDER BY		edlevel DESC;
 
 --4. problem 4--
-select distinct
-	ea.EMPNO,
-	ea.PROJNO
-
-	from EMP_ACT as ea
-		where ea.EMPNO <= 100
-		order by ea.EMPNO
-;
+SELECT DISTINCT		empno, projno
+FROM				emp_act
+WHERE				empno <= 100
+ORDER BY			empno;
 
 --5 problem 5--
-select 
-	emp.LASTNAME,
-	emp.SALARY,
-	emp.COMM
-	from EMPLOYEE as emp
-		where emp.BIRTHDATE < '1980'
-;
+SELECT		lastname, salary, comm
+FROM		employee
+WHERE		birthdate < '1980';
 
 --6 problem 6--
-select 
-	emp.LASTNAME,
-	emp.SALARY,
-	emp.COMM
-	from EMPLOYEE as emp
-		where emp.SALARY > 20000.00 and emp.HIREDATE > '2001'
-		order by emp.SALARY desc
-;
+SELECT		lastname, salary, comm
+FROM		employee
+WHERE		salary > 20000.00 AND hiredate > '2001'
+ORDER BY	salary DESC;
 
 --7 problem 7--
-select 
-	emp.FIRSTNAME,
-	emp.LASTNAME,
-	emp.SALARY,
-	emp.BONUS,
-	emp.COMM
-	from EMPLOYEE as emp
-		where (emp.SALARY > 22000.00 and emp.BONUS = 400.00) or (emp.BONUS = 500.00 and emp.COMM < 1900.00)
-	order by emp.LASTNAME
-;
+SELECT		firstname, lastname, salary, bonus, comm
+FROM		employee
+WHERE		(salary > 22000.00 AND bonus = 400.00) OR (bonus = 500.00 AND comm < 1900.00)
+ORDER BY	lastname;
 
 --8 problem 8--
-select 
-	ea.PROJNO,
-	ea.ACTNO,
-	ea.EMSTDATE,
-	ea.EMENDATE
-	from EMP_ACT as ea
-		where ea.PROJNO like 'AD%' and ea.ACTNO in (10, 80, 180)
-	order by 
-		ea.PROJNO,
-		ea.ACTNO
-;
+SELECT		projno, actno, emstdate, emendate
+FROM		emp_act
+WHERE		projno LIKE 'AD%' AND actno IN (10, 80, 180)
+ORDER BY	projno, actno;
 
 --9 problem 9--
-select 
-	dep.MGRNO,
-	dep.DEPTNO
-
-	from DEPARTMENT dep
-		where dep.MGRNO is not null
-		order by dep.MGRNO
-;
+SELECT		mgrno, deptno
+FROM		department 
+WHERE		mgrno IS NOT NULL
+ORDER BY	mgrno;
 
 --10 problem 10--
-select 
-	emp.EMPNO,
-	emp.LASTNAME,
-	emp.SALARY,
-	emp.BONUS
-	from EMPLOYEE as emp
-		where emp.BONUS >= 800.00 and emp.BONUS <= 1000.00
-
-		order by 
-			emp.BONUS,
-			emp.EMPNO
-;
+SELECT		empno, lastname, salary, bonus
+FROM		employee
+WHERE		bonus >= 800.00 AND bonus <= 1000.00
+ORDER BY	bonus, empno;
 
 --11 problem 11--
-
-select
-	emp.EMPNO,
-	emp.LASTNAME,
-	emp.SALARY,
-	emp.WORKDEPT
-	from EMPLOYEE as emp
-		where emp.WORKDEPT between 'A00' and 'C01'
-			order by
-				emp.LASTNAME,
-				emp.EMPNO
-;
+SELECT		empno, lastname, salary, workdept
+FROM		employee
+WHERE		workdept BETWEEN 'A00' AND 'C01'
+ORDER BY	lastname, empno;
 
 --12 problem 12--
-
-select 
-	p.PROJNO,
-	p.PROJNAME,
-	p.PRSTDATE,
-	p.PRENDATE
-	from PROJECT as p
-		where p.MAJPROJ is null
-		order by p.PROJNO
-;
+SELECT		projno, projname, prstdate, prendate
+FROM		project
+WHERE		majproj IS NULL
+ORDER BY	projno;
 
 --13 problem 13--
-
-select *
-	from PROJECT as p
-		where p.PROJNAME like '%SUPPORT%'
-			order by p.PROJNO desc
-;
+SELECT		*
+FROM		project
+WHERE		projname LIKE '%SUPPORT%'
+ORDER BY	projno DESC;
 
 --14 problem 14--
-
-select * 
-	from DEPARTMENT as dep
-		where dep.DEPTNO like '_1_'
-;
+SELECT		* 
+FROM		department 
+WHERE		deptno LIKE '_1_';
 
 
 --15 problem 15--
-select top 5 
-	emp.LASTNAME,
-	emp.FIRSTNAME,
-	emp.MIDINIT,
-	emp.SALARY
-	from EMPLOYEE as emp
-		where emp.JOB != 'PRESIDENT' and emp.JOB != 'MANAGER'
-			order by emp.SALARY desc
-;
+SELECT TOP 5	lastname, firstname, midinit, salary
+FROM			employee
+WHERE			job != 'PRESIDENT' AND job != 'MANAGER'
+ORDER BY		salary DESC;
