@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\kodigs"
+    "\\AssignmentJoins",
+    "\\AssignmentJoins\\CREATION",
+    "\\expected_prelims",
+    "\\JOINS",
+    "\\problem_quizzes"
   ],
-  "SelectedNode": "\\kodigs\\problem2Exam.sql",
+  "SelectedNode": "\\AssignmentJoins\\Problem 12.sql",
   "PreviewInSolutionExplorer": false
 }

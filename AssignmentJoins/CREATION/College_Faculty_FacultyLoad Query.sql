@@ -1,0 +1,27 @@
+USE LUBGUBAN_DB;
+
+CREATE TABLE COLLEGE(
+	colcode CHAR(5) PRIMARY KEY,
+	colname VARCHAR(50), 
+);
+
+CREATE TABLE FACULTY(
+	fid SMALLINT PRIMARY KEY,
+	fname VARCHAR(50),
+	gender CHAR(1) CHECK (gender IN('M','F')),
+	age SMALLINT,
+	hiredate DATE,
+	rank VARCHAR(10),
+	colcode CHAR(5),
+	FOREIGN KEY(colcode) REFERENCES COLLEGE(colcode)
+);
+
+
+CREATE TABLE FACULTY_LOAD(
+	sbjcode CHAR(5) PRIMARY KEY,
+	sbjtitle VARCHAR(50),
+	units DECIMAL(2,1),
+	fload SMALLINT,
+	FOREIGN KEY(fload) REFERENCES FACULTY(fid)
+);
+
