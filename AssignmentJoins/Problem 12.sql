@@ -1,7 +1,6 @@
 USE LUBGUBAN_DB;
 
 SELECT f.fid, f.fname, fl.sbjcode, fl.sbjtitle, fl.units, fl.sbjcode
-FROM faculty f
-RIGHT OUTER JOIN faculty_load fl on f.fid = fl.fload
+FROM faculty f RIGHT OUTER JOIN faculty_load fl ON f.fid = fl.fload
 ORDER BY fl.sbjcode;
 
