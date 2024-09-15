@@ -1,5 +1,6 @@
 USE LUBGUBAN_DB;
 
-SELECT	d.deptname, e.lastname, e.firstname
-FROM	department d JOIN employee e ON d.mgrno = e.empno
-ORDER BY d.deptname;
+SELECT d.deptname, e.lastname, e.firstname
+FROM department d
+JOIN employee e ON e.empno = d.mgrno
+ORDER BY 1;
