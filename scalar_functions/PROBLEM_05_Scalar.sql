@@ -1,0 +1,6 @@
+USE LUBGUBAN_DB;
+
+SELECT	deptno, deptname, COALESCE(mgrno, 'UNKNOWN MANAGER') AS MGRNO
+FROM	department
+WHERE	mgrno IS NULL
+ORDER BY 1;
