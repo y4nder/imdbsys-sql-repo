@@ -10,4 +10,4 @@ SELECT	CONCAT(firstname, ' ', midinit,'. ', lastname) AS 'EMPLOYEE NAME',
 		COALESCE(CAST((bonus/2) AS DECIMAL(10,2)), 0.00) AS 'NEW-BONUS'
 FROM employee
 WHERE edlevel IN (18, 20)
-ORDER BY 2 DESC, 3 DESC;
+ORDER BY 2, 3;
